@@ -99,10 +99,6 @@ const Users = () => {
   };
 
   useEffect(() => {
-    if (!isLoggedIn) {
-      navigate("/login");
-      return;
-    }
     const db = getFirestore();
     const usersCollection = collection(db, "users");
     const q = query(usersCollection, orderBy("createdAt"));
@@ -110,14 +106,16 @@ const Users = () => {
     const unsubscribe = onSnapshot(q, (snapshot) => {
       const usersData = [];
       snapshot.forEach((doc) => {
-        usersData.push({ id: doc.id, ...doc.data() });
+        const userData = doc.data();
+        if (!userData.isAdmin) {
+          usersData.push({ id: doc.id, ...userData });
+        }
       });
       setUsers(usersData);
     });
 
     return () => unsubscribe();
   }, []);
-
   return (
     <div>
       <FormControl fullWidth>
