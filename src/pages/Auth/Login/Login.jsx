@@ -38,11 +38,6 @@ const Login = () => {
     event.preventDefault();
 
     try {
-      // const userCredential = await login(
-      //   auth,
-      //   formData.email,
-      //   formData.password
-      // );
       const { user: userCredential } = await signInWithEmailAndPassword(
         auth,
         formData?.email,
@@ -71,6 +66,7 @@ const Login = () => {
       console.log(user);
 
       navigate("/home"); // Redirect to desired page after login
+      alert("Logged in successfully!");
     } catch (error) {
       console.error("Error logging in:", error);
       alert("Invalid email or password. Please try again.");

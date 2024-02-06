@@ -75,7 +75,7 @@ const Signup = () => {
 
       navigate("/home");
 
-      alert("formData created successfully!");
+      alert("Signed up successfully!");
 
       setformData({ name: "", email: "", password: "", isAdmin: false });
     } catch (error) {
@@ -93,7 +93,7 @@ const Signup = () => {
         width: "100vw",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "", // Add your desired background color here
+        backgroundColor: "",
       }}
     >
       <Grid item xs={4} className=" p-12 rounded-xl shadow-lg">
@@ -166,7 +166,6 @@ const Signup = () => {
           >
             Sign Up
           </Button>
-          {/* // Add a link to the login page */}
           <Typography variant="subtitle1" mt={1} textAlign={"center"}>
             Already have an account?
             <NavLink to="/login" className={"text-fuzzy-bg"}>
