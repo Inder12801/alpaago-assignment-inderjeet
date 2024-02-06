@@ -3,7 +3,7 @@ import { TextField, Button, Grid, Typography } from "@mui/material";
 import { useFirebase } from "../../../hooks/useFirebase.js";
 import { auth } from "../../../lib/firebase.config";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useMyContext } from "../../../providers/ContextProvider.jsx";
 import {
   collection,
@@ -141,6 +141,13 @@ const Login = () => {
           >
             Log In
           </Button>
+          <Typography variant="subtitle1" mt={1} textAlign={"center"}>
+            Don't have an account?
+            <NavLink to="/signup" className={"text-fuzzy-bg"}>
+              {" "}
+              Sign up
+            </NavLink>
+          </Typography>
         </form>
       </Grid>
     </Grid>

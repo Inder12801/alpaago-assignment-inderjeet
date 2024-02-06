@@ -12,7 +12,7 @@ import { auth } from "../../../lib/firebase.config";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { useMyContext } from "../../../providers/ContextProvider.jsx";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [formData, setformData] = useState({
@@ -166,6 +166,14 @@ const Signup = () => {
           >
             Sign Up
           </Button>
+          {/* // Add a link to the login page */}
+          <Typography variant="subtitle1" mt={1} textAlign={"center"}>
+            Already have an account?
+            <NavLink to="/login" className={"text-fuzzy-bg"}>
+              {" "}
+              Login
+            </NavLink>
+          </Typography>
         </form>
       </Grid>
     </Grid>
