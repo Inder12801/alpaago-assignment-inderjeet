@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.root {
+  width: 100vw;
+}
+.fuzzy-bg {
+  background-color: #271340;
+}
+
+.home {
+  height: 100vh;
+  background: #e3e2e2;
+}
+
+.weather-card {
+  background: rgb(39, 19, 64);
+  background: linear-gradient(
+    90deg,
+    rgba(62, 32, 99, 0.78) 40%,
+    rgba(9, 9, 121, 0.7125700622045693) 80%,
+    rgba(116, 145, 170, 0.757) 100%
+  );
+  color: white !important;
+}
